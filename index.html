@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sacred Smoke - A modern, visually stunning landing page featuring animated backgrounds, smooth transitions, and a clean responsive design.">
+    <meta name="theme-color" content="#1a1a2e">
     <title>Sacred Smoke</title>
     <style>
         * {
@@ -29,6 +31,7 @@
             pointer-events: none;
             overflow: hidden;
             z-index: 0;
+            contain: layout style paint;
         }
 
         .particle {
@@ -38,6 +41,8 @@
             background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             animation: float 15s infinite;
+            will-change: transform, opacity;
+            contain: layout paint;
         }
 
         .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
@@ -102,7 +107,7 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             position: relative;
         }
 
@@ -115,6 +120,7 @@
             height: 2px;
             background: linear-gradient(90deg, #e94560, #ff6b6b);
             transition: width 0.3s ease;
+            will-change: width;
         }
 
         .nav-links a:hover::after {
@@ -147,6 +153,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            will-change: transform, opacity;
         }
 
         .hero p {
@@ -156,6 +163,7 @@
             opacity: 0;
             animation: fadeInUp 1s ease 0.3s forwards;
             color: rgba(255, 255, 255, 0.8);
+            will-change: transform, opacity;
         }
 
         @keyframes fadeInUp {
@@ -177,11 +185,12 @@
             background: linear-gradient(135deg, #e94560, #ff6b6b);
             color: white;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 0;
             animation: fadeInUp 1s ease 0.6s forwards;
             text-decoration: none;
             box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+            will-change: transform;
         }
 
         .cta-button:hover {
@@ -219,9 +228,10 @@
             border-radius: 20px;
             padding: 40px;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
+            will-change: transform;
         }
 
         .feature-card:hover {
@@ -390,6 +400,25 @@
                 font-size: 2rem;
             }
         }
+
+        /* Accessibility: Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            .particle,
+            .glow-orb,
+            .hero h1,
+            .hero p,
+            .cta-button {
+                animation: none;
+                opacity: 1;
+            }
+
+            .feature-card,
+            .cta-button,
+            .nav-links a,
+            .nav-links a::after {
+                transition: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -397,7 +426,7 @@
     <div class="glow-orb glow-orb-1"></div>
     <div class="glow-orb glow-orb-2"></div>
     <div class="glow-orb glow-orb-3"></div>
-    
+
     <div class="particles">
         <div class="particle"></div>
         <div class="particle"></div>
@@ -465,7 +494,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Sacred Smoke. All rights reserved.</p>
+        <p>&copy; 2025 Sacred Smoke. All rights reserved.</p>
     </footer>
 </body>
 </html>
