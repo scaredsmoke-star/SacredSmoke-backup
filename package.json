@@ -1,0 +1,15 @@
+{
+  "name": "sacred-smoke",
+  "version": "1.0.0",
+  "description": "A modern, visually stunning landing page",
+  "scripts": {
+    "build": "echo 'No build step required for static HTML'"
+  },
+  "keywords": [
+    "landing-page",
+    "html",
+    "css"
+  ],
+  "author": "",
+  "license": "ISC"
+}

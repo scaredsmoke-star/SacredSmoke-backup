@@ -15,11 +15,24 @@ A modern, visually stunning landing page featuring animated backgrounds, smooth 
 
 Simply open `index.html` in a web browser to view the landing page.
 
+## Deployment
+
+This project is configured for automatic deployment to Firebase Hosting. See [FIREBASE_SETUP.md](FIREBASE_SETUP.md) for detailed instructions on setting up Firebase deployment.
+
 ## Structure
 
 ```
-├── README.md
-└── index.html
+├── .firebaserc           # Firebase project configuration
+├── .github/
+│   └── workflows/
+│       ├── deploy.yml            # GitHub Pages deployment
+│       └── firebase-deploy.yml   # Firebase deployment
+├── .gitignore            # Git ignore rules
+├── firebase.json         # Firebase hosting configuration
+├── FIREBASE_SETUP.md     # Firebase deployment setup guide
+├── index.html            # Main HTML file
+├── package.json          # Node.js package configuration
+└── README.md             # This file
 ```
 
 ## Technologies Used
