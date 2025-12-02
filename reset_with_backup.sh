@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ORG="sacred-smokes"
-REPO="middleware"
+ORG="scaredsmoke-star"
+REPO="SacredSmoke-backup"
 FEATURE_BRANCH="feature/backup"
-DEFAULT_BRANCH="main"
+DEFAULT_BRANCH="copilot/clone-backup-repo"
 
 if git show-ref --verify --quiet "refs/remotes/origin/${FEATURE_BRANCH}"; then
   if git show-ref --verify --quiet "refs/heads/${FEATURE_BRANCH}"; then
